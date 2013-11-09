@@ -1,22 +1,21 @@
 package com.example.signalapp;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 
-public class MainActivity extends Activity {
+import com.example.signalapp.adapter.HomeFragmentAdapter;
+
+public class MainActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+		HomeFragmentAdapter adapter = new HomeFragmentAdapter(getSupportFragmentManager());
+		ViewPager pag = (ViewPager) findViewById(R.id.pager);
+		pag.setAdapter(adapter);
+		pag.setCurrentItem(1);
 	}
 
 }
