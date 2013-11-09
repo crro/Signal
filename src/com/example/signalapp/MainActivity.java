@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import com.example.signalapp.R;
 
 import com.example.signalapp.adapter.HomeFragmentAdapter;
 
@@ -26,7 +27,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		pag.setAdapter(adapter);
 		pag.setCurrentItem(1);
 		
-		
+		_tvStatus = (TextView) findViewById(R.id.tvStatus);
 		
 		getActionBar().setHomeButtonEnabled(true);
 	}
@@ -47,17 +48,23 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 			Intent intent = new Intent(this, MainActivity.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+			_tvStatus.append("Home selected\n");
 			return true;
 		//case R.id.view1:
 			//Intent i = new Intent(this, SecActivity.class);
 			//startActivity(i);
 			//return true;
+	
+		case R.id.menuHelp:
+			Intent helpIntent = new Intent(this, HelpActivity.class);
+			startActivity(helpIntent);
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+		_tvStatus.append("Item positoin: " + itemPosition + "\n");
 		return false;
 	}
 }
