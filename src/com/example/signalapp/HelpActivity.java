@@ -1,44 +1,37 @@
 package com.example.signalapp;
 
-import android.app.ActionBar;
-import android.app.ActionBar.OnNavigationListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MenuItem.OnActionExpandListener;
-import android.widget.RatingBar;
-import android.widget.TextView;
-import com.example.signalapp.R;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-import com.example.signalapp.adapter.HomeFragmentAdapter;
+public class HelpActivity extends Activity {
 
-public class MainActivity extends FragmentActivity implements OnNavigationListener{
-	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		HomeFragmentAdapter adapter = new HomeFragmentAdapter(getSupportFragmentManager());
-		ViewPager pag = (ViewPager) findViewById(R.id.pager);
-		pag.setAdapter(adapter);
-		pag.setCurrentItem(1);
-		
-		
+		setContentView(R.layout.activity_help);
+		final ListView listview = (ListView) findViewById(R.id.contactList);
+		List<String> values = new ArrayList<String>();
 		getActionBar().setHomeButtonEnabled(true);
+		//final ListAdapter adapter = new SimpleAdapter(this,values,android.R.layout.simple_list_item_1, new String[] {"Name"},new int[] {});
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-
-		//MenuItem menuItem = menu.findItem(R.id.menu_search);
-		
-
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.help, menu);
 		return true;
 	}
+	
+
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -59,9 +52,6 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-	}
 
-	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-		return false;
-	}
+}
 }
