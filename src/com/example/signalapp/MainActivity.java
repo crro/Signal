@@ -26,7 +26,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		pag.setAdapter(adapter);
 		pag.setCurrentItem(1);
 		
-		_tvStatus = (TextView) findViewById(R.id.tvStatus);
+		
 		
 		getActionBar().setHomeButtonEnabled(true);
 	}
@@ -47,7 +47,6 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 			Intent intent = new Intent(this, MainActivity.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
-			_tvStatus.append("Home selected\n");
 			return true;
 		//case R.id.view1:
 			//Intent i = new Intent(this, SecActivity.class);
@@ -59,7 +58,6 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	}
 
 	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-		_tvStatus.append("Item positoin: " + itemPosition + "\n");
 		return false;
 	}
 }

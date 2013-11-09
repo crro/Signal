@@ -29,7 +29,7 @@ public final class R {
         public static final int menuHelp=0x7f080005;
         public static final int pageStrip=0x7f080001;
         public static final int pager=0x7f080000;
-        public static final int tvStatus=0x7f080002;
+        public static final int writeMessage=0x7f080002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

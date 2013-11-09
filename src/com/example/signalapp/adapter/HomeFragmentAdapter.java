@@ -19,9 +19,9 @@ public class HomeFragmentAdapter extends FragmentPagerAdapter {
 	public HomeFragmentAdapter(FragmentManager fm) {
 		super(fm);
 		_fragments = new ArrayList<Fragment>();
+		_fragments.add(new WriteSignalFragment());
 		_fragments.add(new InboxFragment());
 		_fragments.add(new SentSignalsFragment());
-		_fragments.add(new WriteSignalFragment());
 	}
 
 	public Fragment getItem(int arg0) {
