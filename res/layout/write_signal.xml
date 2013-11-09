@@ -6,8 +6,11 @@
     <EditText 
         android:id="@+id/writeMessage"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:gravity="top|left"
         android:inputType="text"/>
-    
+    <Button 
+        android:id="@+id/sendWrite"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"    
 </LinearLayout>
