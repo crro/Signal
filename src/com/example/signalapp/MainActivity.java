@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import com.example.signalapp.R;
 
 import com.example.signalapp.adapter.HomeFragmentAdapter;
 
