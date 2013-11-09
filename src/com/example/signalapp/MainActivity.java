@@ -55,6 +55,9 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		case R.id.menuHelp:
 			Intent helpIntent = new Intent(this, HelpActivity.class);
 			startActivity(helpIntent);
+		case R.id.menuAbout:
+			Intent aboutIntent = new Intent(this, AboutActivity.class);
+			startActivity(aboutIntent);
 		default:
 			return super.onOptionsItemSelected(item);
 		}

@@ -1,37 +1,33 @@
 package com.example.signalapp;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
-public class HelpActivity extends Activity {
+import com.example.signalapp.adapter.FollowFragmentAdapter;
+
+public class AboutActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_help);
-		final ListView listview = (ListView) findViewById(R.id.contactList);
-		List<String> values = new ArrayList<String>();
+		setContentView(R.layout.activity_about);
+		FollowFragmentAdapter adapter = new FollowFragmentAdapter(getSupportFragmentManager());
+		ViewPager pag = (ViewPager) findViewById(R.id.pagerFollow);
+		pag.setAdapter(adapter);
+		pag.setCurrentItem(1);
 		getActionBar().setHomeButtonEnabled(true);
-		//final ListAdapter adapter = new SimpleAdapter(this,values,android.R.layout.simple_list_item_1, new String[] {"Name"},new int[] {});
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.about, menu);
 		return true;
 	}
-	
-
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
